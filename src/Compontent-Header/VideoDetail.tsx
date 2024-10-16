@@ -82,7 +82,6 @@ const VideoDetail: React.FC<IType> = ({
       {puspData && (
         <div className={Style.Detail}>
           <video
-            controls
             ref={puspVideoRef}
             onCanPlay={handlePushPlay}
             onEnded={handlePuspEnd}
@@ -97,7 +96,6 @@ const VideoDetail: React.FC<IType> = ({
       {ladduData && (
         <div className={Style.Detail}>
           <video
-            controls
             ref={ladduVideoRef}
             onCanPlay={handleladduPlay}
             onEnded={handleladduEnd}
@@ -112,7 +110,6 @@ const VideoDetail: React.FC<IType> = ({
       {ArtiData && (
         <div className={Style.Detail}>
           <video
-            controls
             ref={ArtiVideoRef}
             onCanPlay={handleArtiPlay}
             onEnded={handleArtiEnd}
@@ -127,7 +124,6 @@ const VideoDetail: React.FC<IType> = ({
       {DeepData && (
         <div className={Style.Detail}>
           <video
-            controls
             loop
             ref={DeepVideoRef}
             onCanPlay={handleDeepPlay}

@@ -122,7 +122,7 @@ const Video: React.FC<IType> = ({ firstVedio, setFirstVedio }) => {
       {secondVedio && (
         <div className={Style.modalOverlay}>
           <div className={Style.modalContent}>
-            <video controls ref={secondVedioRef}>
+            <video ref={secondVedioRef}>
               <source
                 src="https://www.bhaskar.com/__static__/2.0/ram-mandir/interactions/desktop-ghanta1-vp9-chrome.webm"
                 type="video/mp4"
@@ -164,7 +164,7 @@ const Video: React.FC<IType> = ({ firstVedio, setFirstVedio }) => {
       {fourthVedio && (
         <div className={Style.modalOverlay}>
           <div className={Style.modalContent}>
-            <video controls ref={fourthVedioRef}>
+            <video ref={fourthVedioRef}>
               <source
                 src="https://www.bhaskar.com/__static__/2.0/ram-mandir/interactions/desktop-ghanta1-vp9-chrome.webm"
                 type="video/mp4"
