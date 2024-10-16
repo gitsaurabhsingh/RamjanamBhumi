@@ -1,0 +1,136 @@
+.header {
+  height: 100vh;
+  display: block;
+  .headerflex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0px;
+    position: fixed;
+    width: 100%;
+    z-index: 999;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.5), transparent);
+    .headerImg {
+      display: block;
+      margin-left: 20px;
+      img {
+        width: 80%;
+      }
+    }
+    .headerSpeak {
+      display: flex;
+      gap: 15px;
+
+      i {
+        font-size: 22px;
+        color: #fff;
+      }
+      span {
+        font-size: 15px;
+        font-weight: 600;
+        color: #fff;
+      }
+    }
+    .headerIcon {
+      display: flex;
+      gap: 25px;
+      margin-right: 20px;
+
+      i {
+        color: #fff;
+        font-size: 22px;
+      }
+    }
+  }
+
+  .BannerDisk {
+    display: block;
+    width: 100%;
+    height: 100%;
+    .Banner {
+      width: 100%;
+      display: block;
+      height: 100%;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    .BannerButton {
+      display: flex;
+      position: absolute;
+      justify-content: space-between;
+      bottom: 20px;
+      left: 0;
+      right: 0;
+      width: 1000px;
+      margin: auto;
+      .BannerButtonMandir {
+        display: block;
+        max-width: 50%;
+        button {
+          background: none;
+          border: none;
+          max-width: 100%;
+          img {
+            width: 100%;
+            height: 100%;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 360px) and (max-width: 768px) {
+  .header {
+    width: 100% !important;
+    position: fixed;
+    .headerflex {
+      display: flex;
+      justify-content: space-between;
+
+      .headerImg {
+        display: block !important;
+
+        img {
+          width: 70%;
+          color: #fff;
+        }
+      }
+      .headerSpeak {
+        display: none;
+      }
+      .headerIcon {
+        display: flex;
+      }
+    }
+    .BannerDisk {
+      display: block;
+      max-width: 100%;
+      // background-image: url("https://images.bhaskarassets.com/thumb/2048x0/web2images/web-frontend/3D-Ram-Mandir/new-main-bg-v1-mobile-hi.jpg");
+      // background-repeat: no-repeat;
+      // background-size: cover;
+      .Banner {
+        max-width: 100%;
+        display: block;
+        height: 100%;
+        img {
+          max-width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+      .BannerButton {
+        display: block;
+        max-width: 100%;
+        bottom: 58px;
+        .BannerButtonMandir {
+          max-width: 100%;
+        }
+      }
+    }
+  }
+}
