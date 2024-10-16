@@ -187,12 +187,7 @@ const Video: React.FC<IType> = ({ firstVedio, setFirstVedio }) => {
       {thirdVedio && (
         <div className={Style.modalOverlay}>
           <div className={Style.modalContent}>
-            <video
-              autoPlay
-              ref={thirdVedioRef}
-              controls
-              onEnded={handlePlayThirdVedio}
-            >
+            <video autoPlay ref={thirdVedioRef} onEnded={handlePlayThirdVedio}>
               <source
                 src={
                   !mobileVideo

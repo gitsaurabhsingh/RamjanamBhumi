@@ -27,12 +27,12 @@
   }
   .Mainbox {
     position: absolute;
-    bottom: 0%;
+    bottom: 2%;
     left: 0;
     width: 100%;
     .Overlay {
       position: absolute;
-      bottom: 0;
+      bottom: -40px;
       left: 0;
       background: linear-gradient(1turn, rgba(0, 0, 0, 0.7), transparent);
       height: 150px;
