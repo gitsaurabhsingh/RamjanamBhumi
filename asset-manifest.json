@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/RamjanamBhumi/static/css/main.12d91870.css",
+    "main.css": "/RamjanamBhumi/static/css/main.88cd9b5c.css",
     "main.js": "/RamjanamBhumi/static/js/main.4c776ac7.js",
     "static/js/453.ed3810f9.chunk.js": "/RamjanamBhumi/static/js/453.ed3810f9.chunk.js",
     "static/media/pusph-chadhaye-new.png": "/RamjanamBhumi/static/media/pusph-chadhaye-new.3237ad339a0170ad943f.png",
@@ -14,12 +14,12 @@
     "static/media/new-bell-icon-hi.png": "/RamjanamBhumi/static/media/new-bell-icon-hi.e83f208e3f9422ceee31.png",
     "static/media/zzzzzzzz-removebg1-preview.png": "/RamjanamBhumi/static/media/zzzzzzzz-removebg1-preview.e2a781c632686d3dfa2d.png",
     "index.html": "/RamjanamBhumi/index.html",
-    "main.12d91870.css.map": "/RamjanamBhumi/static/css/main.12d91870.css.map",
+    "main.88cd9b5c.css.map": "/RamjanamBhumi/static/css/main.88cd9b5c.css.map",
     "main.4c776ac7.js.map": "/RamjanamBhumi/static/js/main.4c776ac7.js.map",
     "453.ed3810f9.chunk.js.map": "/RamjanamBhumi/static/js/453.ed3810f9.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.12d91870.css",
+    "static/css/main.88cd9b5c.css",
     "static/js/main.4c776ac7.js"
   ]
 }
