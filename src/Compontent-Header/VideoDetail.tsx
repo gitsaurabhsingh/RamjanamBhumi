@@ -10,6 +10,7 @@ export interface IType {
   setLadduData: any;
   DeepData: any;
   setDeepData: any;
+  setShowButton: any;
 }
 
 const VideoDetail: React.FC<IType> = ({
@@ -21,6 +22,7 @@ const VideoDetail: React.FC<IType> = ({
   setLadduData,
   DeepData,
   setDeepData,
+  setShowButton,
 }) => {
   const puspVideoRef: any = useRef(null);
   const puspAudioRef: any = useRef(null);
@@ -37,10 +39,12 @@ const VideoDetail: React.FC<IType> = ({
     if (puspAudioRef.current) {
       puspAudioRef.current.play();
     }
+    setShowButton(false);
   };
 
   const handlePuspEnd = () => {
     setPuspData(false);
+    setShowButton(true);
   };
 
   const handleArtiPlay = () => {
@@ -50,9 +54,11 @@ const VideoDetail: React.FC<IType> = ({
     if (ArtiAudioRef.current) {
       ArtiAudioRef.current.play();
     }
+    setShowButton(false);
   };
   const handleArtiEnd = () => {
     setArtiData(false);
+    setShowButton(true);
   };
   const handleladduPlay = () => {
     if (ladduVideoRef.current) {
@@ -61,9 +67,11 @@ const VideoDetail: React.FC<IType> = ({
     if (ladduAudioRef.current) {
       ladduAudioRef.current.play();
     }
+    setShowButton(false);
   };
   const handleladduEnd = () => {
     setLadduData(false);
+    setShowButton(true);
   };
   const handleDeepPlay = () => {
     if (DeepVideoRef.current) {
@@ -72,9 +80,11 @@ const VideoDetail: React.FC<IType> = ({
     if (DeepAudioRef.current) {
       DeepAudioRef.current.play();
     }
+    setShowButton(false);
   };
   const handleDeepEnd = () => {
     setDeepData(false);
+    setShowButton(true);
   };
 
   return (

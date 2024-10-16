@@ -46,15 +46,15 @@
   }
   .Mainbox {
     position: absolute;
-    bottom: 4%;
+    bottom: 0%;
     left: 0;
     width: 100%;
-    z-index: 999;
+
     .Overlay {
       position: absolute;
       bottom: 0;
       left: 0;
-      background-color: rgba(0, 0, 0, 0.2);
+      background: linear-gradient(1turn, rgba(0, 0, 0, 0.7), transparent);
       height: 150px;
       width: 100%;
     }
@@ -88,6 +88,8 @@
           font-size: 15px;
           color: #fff;
           margin-top: 90px;
+          position: relative;
+          z-index: 9;
         }
       }
     }

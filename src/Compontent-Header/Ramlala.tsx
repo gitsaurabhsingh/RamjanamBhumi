@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Style from "./Ramlala.module.scss";
 import line from "../img/light-effect.png";
 import pushp from "../img/pusph-chadhaye-new.png";
@@ -19,6 +19,8 @@ const Ramlala: React.FC<IType> = ({ RamlalaVedio, setRamlalaVedio }) => {
   const [DeepData, setDeepData] = useState(false);
   const [isVideoEnded, setIsVideoEnded] = useState(false);
   const [mobileVideo, setMobileVideo] = useState(window.innerWidth <= 768);
+  const RamlaRef: any = useRef(null);
+  const [showButton, setShowButton] = useState(false);
 
   useEffect(() => {
     const mobileImage = () => {
@@ -31,9 +33,43 @@ const Ramlala: React.FC<IType> = ({ RamlalaVedio, setRamlalaVedio }) => {
     };
   }, []);
 
-  function handleRamlalaVedio() {
+  function handleRamlalaVedioEnd() {
     setIsVideoEnded(true);
   }
+
+  const handleRamlalaVedio = () => {
+    if (RamlaRef.current) {
+      const totalDuration = RamlaRef.current.duration;
+      RamlaRef.current.currentTime = Math.max(0, totalDuration - 20);
+      RamlaRef.current.play();
+    }
+    setIsVideoEnded(false);
+  };
+
+  const handleTimeUpdate = () => {
+    if (RamlaRef.current) {
+      const currentTime = RamlaRef.current.currentTime;
+      if (currentTime >= 35) {
+        setShowButton(true);
+      }
+    }
+  };
+
+  const handleLoadMetaData = () => {
+    const videoElement = RamlaRef.current;
+    if (videoElement) {
+      videoElement.addEventListener("timeupdate", handleTimeUpdate);
+    }
+  };
+
+  useEffect(() => {
+    return () => {
+      const videoElement = RamlaRef.current;
+      if (videoElement) {
+        videoElement.removeEventListener("timeupdate", handleTimeUpdate);
+      }
+    };
+  }, []);
 
   const handlePusp = () => {
     setPuspData(true);
@@ -52,7 +88,14 @@ const Ramlala: React.FC<IType> = ({ RamlalaVedio, setRamlalaVedio }) => {
       {RamlalaVedio && (
         <div className={Style.modalOverlay}>
           <div className={Style.modalContent}>
-            <video autoPlay onEnded={handleRamlalaVedio}>
+            <video
+              ref={RamlaRef}
+              onLoadedMetadata={() => {
+                handleRamlalaVedio();
+                handleLoadMetaData();
+              }}
+              onEnded={handleRamlalaVedioEnd}
+            >
               <source
                 src={
                   !mobileVideo
@@ -64,34 +107,42 @@ const Ramlala: React.FC<IType> = ({ RamlalaVedio, setRamlalaVedio }) => {
           </div>
 
           {/* Show the offerings section only if the video has ended */}
-          {isVideoEnded && (
+          {showButton && (
             <div className={Style.Mainbox}>
               <div className={Style.Overlay}></div>
               <div className={Style.ModelFlower}>
                 <div className={Style.Modelpushp}>
                   <div className={Style.Modelpusph1} onClick={handlePusp}>
-                    <img className={Style.rotatingImage} src={line} alt="" />
+                    {isVideoEnded && (
+                      <img className={Style.rotatingImage} src={line} alt="" />
+                    )}
                     <img src={pushp} alt="" />
                   </div>
                   <h2>पुष्प चढ़ाएं </h2>
                 </div>
                 <div className={Style.Modelpushp}>
                   <div className={Style.Modelpusph1} onClick={handleladdu}>
-                    <img className={Style.rotatingImage} src={line} alt="" />
+                    {isVideoEnded && (
+                      <img className={Style.rotatingImage} src={line} alt="" />
+                    )}
                     <img src={laddu} alt="" />
                   </div>
                   <h2>प्रसाद चढ़ाएं </h2>
                 </div>
                 <div className={Style.Modelpushp}>
                   <div className={Style.Modelpusph1} onClick={handleArti}>
-                    <img className={Style.rotatingImage} src={line} alt="" />
+                    {isVideoEnded && (
+                      <img className={Style.rotatingImage} src={line} alt="" />
+                    )}
                     <img src={jyot} alt="" />
                   </div>
                   <h2>श्रीराम ज्योति जलाएं</h2>
                 </div>
                 <div className={Style.Modelpushp}>
                   <div className={Style.Modelpusph1} onClick={handleDeep}>
-                    <img className={Style.rotatingImage} src={line} alt="" />
+                    {isVideoEnded && (
+                      <img className={Style.rotatingImage} src={line} alt="" />
+                    )}
                     <img src={arti} alt="" />
                   </div>
                   <h2>पूरी आरती करें</h2>
@@ -111,6 +162,7 @@ const Ramlala: React.FC<IType> = ({ RamlalaVedio, setRamlalaVedio }) => {
         setLadduData={setLadduData}
         DeepData={DeepData}
         setDeepData={setDeepData}
+        setIsVideoEnded={setIsVideoEnded}
       />
     </>
   );

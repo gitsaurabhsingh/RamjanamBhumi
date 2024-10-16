@@ -10,6 +10,7 @@ export interface IType {
   setLadduData: any;
   DeepData: any;
   setDeepData: any;
+  setIsVideoEnded: any;
 }
 
 const RamlalaDetails: React.FC<IType> = ({
@@ -21,6 +22,7 @@ const RamlalaDetails: React.FC<IType> = ({
   setLadduData,
   DeepData,
   setDeepData,
+  setIsVideoEnded,
 }) => {
   const puspVideoRef: any = useRef(null);
   const puspAudioRef: any = useRef(null);
@@ -37,10 +39,12 @@ const RamlalaDetails: React.FC<IType> = ({
     if (puspAudioRef.current) {
       puspAudioRef.current.play();
     }
+    setIsVideoEnded(false);
   };
 
   const handlePuspEnd = () => {
     setPuspData(false);
+    setIsVideoEnded(true);
   };
 
   const handleArtiPlay = () => {
@@ -50,9 +54,11 @@ const RamlalaDetails: React.FC<IType> = ({
     if (ArtiAudioRef.current) {
       ArtiAudioRef.current.play();
     }
+    setIsVideoEnded(false);
   };
   const handleArtiEnd = () => {
     setArtiData(false);
+    setIsVideoEnded(true);
   };
   const handleladduPlay = () => {
     if (ladduVideoRef.current) {
@@ -61,9 +67,11 @@ const RamlalaDetails: React.FC<IType> = ({
     if (ladduAudioRef.current) {
       ladduAudioRef.current.play();
     }
+    setIsVideoEnded(false);
   };
   const handleladduEnd = () => {
     setLadduData(false);
+    setIsVideoEnded(true);
   };
   const handleDeepPlay = () => {
     if (DeepVideoRef.current) {
@@ -72,9 +80,11 @@ const RamlalaDetails: React.FC<IType> = ({
     if (DeepAudioRef.current) {
       DeepAudioRef.current.play();
     }
+    setIsVideoEnded(false);
   };
   const handleDeepEnd = () => {
     setDeepData(false);
+    setIsVideoEnded(true);
   };
 
   return (
@@ -82,7 +92,6 @@ const RamlalaDetails: React.FC<IType> = ({
       {puspData && (
         <div className={Style.Detail}>
           <video
-            controls
             ref={puspVideoRef}
             onCanPlay={handlePushPlay}
             onEnded={handlePuspEnd}
@@ -97,7 +106,6 @@ const RamlalaDetails: React.FC<IType> = ({
       {ladduData && (
         <div className={Style.Detail}>
           <video
-            controls
             ref={ladduVideoRef}
             onCanPlay={handleladduPlay}
             onEnded={handleladduEnd}
@@ -112,7 +120,6 @@ const RamlalaDetails: React.FC<IType> = ({
       {ArtiData && (
         <div className={Style.Detail}>
           <video
-            controls
             ref={ArtiVideoRef}
             onCanPlay={handleArtiPlay}
             onEnded={handleArtiEnd}
@@ -128,7 +135,6 @@ const RamlalaDetails: React.FC<IType> = ({
         <div className={Style.Detail}>
           <video
             loop
-            controls
             ref={DeepVideoRef}
             onCanPlay={handleDeepPlay}
             onEnded={handleDeepEnd}
