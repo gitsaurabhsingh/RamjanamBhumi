@@ -120,7 +120,16 @@
     .Mainbox {
       width: 100%;
       z-index: 999;
+      bottom: 5%;
       position: absolute;
+      .Overlay {
+        position: absolute;
+        bottom: -32px;
+        left: 0;
+        background: linear-gradient(1turn, rgba(0, 0, 0, 0.7), transparent);
+        height: 150px;
+        width: 100%;
+      }
       .ModelFlower {
         width: 93%;
         .Modelpushp {
@@ -139,7 +148,7 @@
           }
           h2 {
             font-size: 13px;
-            margin-top: 80px;
+            margin-top: 68px;
           }
         }
       }
