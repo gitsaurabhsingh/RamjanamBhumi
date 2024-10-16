@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Style from "./Header.module.scss";
 import Saurabh from "../img/zzzzzzzz-removebg1-preview.png";
 import Banner from "../img/Rammandir.jpg";
@@ -11,6 +11,18 @@ const Header = () => {
   const [showImage, setShowImage] = useState(true);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [RamlalaVedio, setRamlalaVedio] = useState(false);
+  const [mobileImage, setMobileImage] = useState(window.innerWidth <= 768);
+
+  useEffect(() => {
+    const mobileImage = () => {
+      const mobileWidth = window.innerWidth <= 768;
+      setMobileImage(mobileWidth);
+    };
+    window.addEventListener("resize", mobileImage);
+    return () => {
+      window.removeEventListener("resize", mobileImage);
+    };
+  }, []);
 
   const openModal = () => {
     setIsModalOpen(true);
@@ -40,7 +52,14 @@ const Header = () => {
       {showImage && (
         <div className={Style.BannerDisk}>
           <div className={Style.Banner}>
-            <img src={Banner} alt="Ram Mandir Banner" />
+            {!mobileImage ? (
+              <img src={Banner} alt="Ram Mandir Banner" />
+            ) : (
+              <img
+                src="https://images.bhaskarassets.com/thumb/2048x0/web2images/web-frontend/3D-Ram-Mandir/new-main-bg-v1-mobile-hi.jpg"
+                alt=""
+              />
+            )}
           </div>
           <div className={Style.BannerButton}>
             <div className={Style.BannerButtonMandir}>

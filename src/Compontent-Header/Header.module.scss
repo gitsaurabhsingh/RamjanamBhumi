@@ -105,6 +105,9 @@
       }
       .headerIcon {
         display: flex;
+        i {
+          font-size: 20px;
+        }
       }
     }
     .BannerDisk {

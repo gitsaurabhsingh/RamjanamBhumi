@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Style from "./Ramlala.module.scss";
 import line from "../img/light-effect.png";
 import pushp from "../img/pusph-chadhaye-new.png";
@@ -18,10 +18,22 @@ const Ramlala: React.FC<IType> = ({ RamlalaVedio, setRamlalaVedio }) => {
   const [ladduData, setLadduData] = useState(false);
   const [DeepData, setDeepData] = useState(false);
   const [isVideoEnded, setIsVideoEnded] = useState(false);
+  const [mobileVideo, setMobileVideo] = useState(window.innerWidth <= 768);
 
-  const handleRamlalaVedio = () => {
+  useEffect(() => {
+    const mobileImage = () => {
+      const mobileWidth = window.innerWidth <= 768;
+      setMobileVideo(mobileWidth);
+    };
+    window.addEventListener("resize", mobileImage);
+    return () => {
+      window.removeEventListener("resize", mobileImage);
+    };
+  }, []);
+
+  function handleRamlalaVedio() {
     setIsVideoEnded(true);
-  };
+  }
 
   const handlePusp = () => {
     setPuspData(true);
@@ -40,10 +52,13 @@ const Ramlala: React.FC<IType> = ({ RamlalaVedio, setRamlalaVedio }) => {
       {RamlalaVedio && (
         <div className={Style.modalOverlay}>
           <div className={Style.modalContent}>
-            <video autoPlay controls onEnded={handleRamlalaVedio}>
+            <video autoPlay onEnded={handleRamlalaVedio}>
               <source
-                src="https://www.bhaskar.com/__static__/2.0/ram-mandir/videos/v8/hi-desktop-p3-v3.mp4"
-                type="video/mp4"
+                src={
+                  !mobileVideo
+                    ? "https://www.bhaskar.com/__static__/2.0/ram-mandir/videos/v8/hi-desktop-p3-v3.mp4"
+                    : "https://www.bhaskar.com/__static__/2.0/ram-mandir/videos/v8/hi-mobile-p3-v3.mp4"
+                }
               />
             </video>
           </div>
