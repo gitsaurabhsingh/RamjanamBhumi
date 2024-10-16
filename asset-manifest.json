@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/RamjanamBhumi/static/css/main.5d77f6f2.css",
+    "main.js": "/RamjanamBhumi/static/js/main.c8eeba3e.js",
+    "static/js/453.ed3810f9.chunk.js": "/RamjanamBhumi/static/js/453.ed3810f9.chunk.js",
+    "static/media/pusph-chadhaye-new.png": "/RamjanamBhumi/static/media/pusph-chadhaye-new.3237ad339a0170ad943f.png",
+    "static/media/prasad-chadhayye-new.png": "/RamjanamBhumi/static/media/prasad-chadhayye-new.aa5a27d0f0d8fb352d7f.png",
+    "static/media/poori-arti-kare-new.png": "/RamjanamBhumi/static/media/poori-arti-kare-new.000bf80dca8def4c7d38.png",
+    "static/media/sri-ram-joti-jalayen-new.png": "/RamjanamBhumi/static/media/sri-ram-joti-jalayen-new.8d2144aea144a8894fb1.png",
+    "static/media/light-effect.png": "/RamjanamBhumi/static/media/light-effect.8f94524af377e988b0ff.png",
+    "static/media/Rammandir.jpg": "/RamjanamBhumi/static/media/Rammandir.ecc98d713a77d809772d.jpg",
+    "static/media/pura-mandir.png": "/RamjanamBhumi/static/media/pura-mandir.cc8004960aa6b1a3f125.png",
+    "static/media/ram-lala-ke-darshon.png": "/RamjanamBhumi/static/media/ram-lala-ke-darshon.016a7b778768131a4d58.png",
+    "static/media/new-bell-icon-hi.png": "/RamjanamBhumi/static/media/new-bell-icon-hi.e83f208e3f9422ceee31.png",
+    "static/media/zzzzzzzz-removebg1-preview.png": "/RamjanamBhumi/static/media/zzzzzzzz-removebg1-preview.e2a781c632686d3dfa2d.png",
+    "index.html": "/RamjanamBhumi/index.html",
+    "main.5d77f6f2.css.map": "/RamjanamBhumi/static/css/main.5d77f6f2.css.map",
+    "main.c8eeba3e.js.map": "/RamjanamBhumi/static/js/main.c8eeba3e.js.map",
+    "453.ed3810f9.chunk.js.map": "/RamjanamBhumi/static/js/453.ed3810f9.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.5d77f6f2.css",
+    "static/js/main.c8eeba3e.js"
+  ]
+}
