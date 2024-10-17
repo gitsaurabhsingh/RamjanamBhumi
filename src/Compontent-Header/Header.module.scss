@@ -40,6 +40,12 @@
         color: #fff;
         font-size: 22px;
       }
+      .headerIcon2 {
+        display: block;
+        i {
+          font-size: 22px;
+        }
+      }
     }
   }
 
@@ -96,7 +102,7 @@
         display: block !important;
 
         img {
-          width: 70%;
+          width: 84%;
           color: #fff;
         }
       }
@@ -107,8 +113,16 @@
         display: flex;
         i {
           font-size: 20px;
+          display: none;
           &:hover {
             color: black;
+          }
+        }
+        .headerIcon2 {
+          display: block;
+          i {
+            display: block;
+            font-size: 35px;
           }
         }
       }
@@ -116,9 +130,6 @@
     .BannerDisk {
       display: block;
       max-width: 100%;
-      // background-image: url("https://images.bhaskarassets.com/thumb/2048x0/web2images/web-frontend/3D-Ram-Mandir/new-main-bg-v1-mobile-hi.jpg");
-      // background-repeat: no-repeat;
-      // background-size: cover;
       .Banner {
         max-width: 100%;
         display: block;

@@ -46,7 +46,9 @@ const Header = () => {
         <div className={Style.headerIcon}>
           <i className="fa-brands fa-facebook-f"></i>
           <i className="fa-brands fa-twitter"></i>
-          <i className="fa-solid fa-link"></i>
+          <div className={Style.headerIcon2}>
+            <i className="fa-solid fa-share-nodes"></i>
+          </div>
         </div>
       </div>
       {showImage && (
